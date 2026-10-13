@@ -11,17 +11,27 @@
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
         android:layout_height="100dp"
-        app:cardCornerRadius="15dp">
+        android:layout_marginTop="50dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:cardCornerRadius="15dp"
+        tools:visibility="visible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:clipChildren="false"
+            android:clipToPadding="false">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_marginTop="-30dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
                 app:cardCornerRadius="30dp"
+                app:cardElevation="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -30,6 +40,7 @@
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:elevation="8dp"
                     android:scaleType="centerCrop"
                     tools:src="@tools:sample/avatars" />
             </androidx.cardview.widget.CardView>
