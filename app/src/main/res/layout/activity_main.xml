@@ -10,30 +10,34 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="300dp"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="50dp"
         android:clipChildren="false"
         android:clipToPadding="false">
 
+        <!-- 1. Header Card (Background) -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
             app:cardCornerRadius="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp">
 
                 <TextView
                     android:id="@+id/greetingText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="35dp"
-                    android:text="Hello, ______!"
+                    android:text="Hello, _________!"
                     android:textColor="#713600"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -55,24 +59,23 @@
 
         </androidx.cardview.widget.CardView>
 
+        <!-- 2. Profile Picture Card (Overlapping the top edge) -->
         <androidx.cardview.widget.CardView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginTop="-30dp"
             android:clipChildren="false"
             android:clipToPadding="false"
             app:cardCornerRadius="30dp"
             app:cardElevation="8dp"
-            app:layout_constraintBottom_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintBottom_toTopOf="@id/cardView"
+            app:layout_constraintEnd_toEndOf="@id/cardView"
+            app:layout_constraintStart_toStartOf="@id/cardView"
+            app:layout_constraintTop_toTopOf="@id/cardView">
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:elevation="8dp"
                 android:scaleType="centerCrop"
                 tools:src="@tools:sample/avatars" />
         </androidx.cardview.widget.CardView>
