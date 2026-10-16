@@ -18,7 +18,7 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="300dp"
+                android:layout_width="350dp"
                 android:layout_height="75dp"
                 android:layout_marginTop="40dp"
                 app:cardCornerRadius="15dp">
@@ -44,10 +44,10 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="300dp"
+                android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="15dp"
-                app:cardCornerRadius="15dp" >
+                app:cardCornerRadius="15dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -65,6 +65,155 @@
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
+            <!-- Container that allows the yellow header badge to overlap the main card -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <!-- 1. Main White Recipe Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardRecipeMain"
+                    android:layout_width="350dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="18dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <!-- Recipe Image (Left Side) -->
+                        <ImageView
+                            android:id="@+id/imgRecipe"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/french_onion_bake" />
+
+                        <!-- Stats Container (Right Side) -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.2"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <!-- Cook Time Section -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="12dp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <!-- Circle Card for Time Number -->
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="54dp"
+                                    android:layout_height="54dp"
+                                    app:cardBackgroundColor="#C75100"
+                                    app:cardCornerRadius="27dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:id="@+id/tvTimeValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="25"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold" />
+                                </androidx.cardview.widget.CardView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="min"
+                                    android:textColor="#5C2600"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <!-- Difficulty Level Section -->
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <!-- Circle Card for Difficulty Level -->
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="54dp"
+                                    android:layout_height="54dp"
+                                    app:cardBackgroundColor="#BCE3B2"
+                                    app:cardCornerRadius="27dp"
+                                    app:cardElevation="0dp">
+
+                                    <TextView
+                                        android:id="@+id/tvLevelValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="EASY"
+                                        android:textColor="#5C2600"
+                                        android:textSize="11sp"
+                                        android:textStyle="bold" />
+                                </androidx.cardview.widget.CardView>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="level"
+                                    android:textColor="#5C2600"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- 2. Overlapping Yellow Title Pill Badge -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardRecipeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    app:cardBackgroundColor="#FFBE3D"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="6dp"
+                    app:layout_constraintBottom_toTopOf="@id/cardRecipeMain"
+                    app:layout_constraintEnd_toEndOf="@id/cardRecipeMain"
+                    app:layout_constraintStart_toStartOf="@id/cardRecipeMain"
+                    app:layout_constraintTop_toTopOf="@id/cardRecipeMain">
+
+                    <TextView
+                        android:id="@+id/tvRecipeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:paddingStart="24dp"
+                        android:paddingEnd="24dp"
+                        android:text="French Onion Bake"
+                        android:textColor="#261000"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
