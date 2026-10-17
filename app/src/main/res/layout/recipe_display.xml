@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:nestedScrollingEnabled="false"
-                tools:listitem="@layout/item_recipe" />
+                tools:listitem="@layout/item_recipe_card" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
