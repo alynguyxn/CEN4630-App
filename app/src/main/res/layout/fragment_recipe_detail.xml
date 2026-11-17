@@ -33,7 +33,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_tictactoe_play" />
+                    android:src="@android:drawable/ic_menu_gallery" />
 
                 <!-- Overlapping Title Banner with 18dp Corner Radius -->
                 <androidx.cardview.widget.CardView
@@ -256,7 +256,6 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:paintFlags="@android:integer/config_shortAnimTime"
                             android:text="Butter                   4 Tbsp"
                             android:textColor="#261000"
                             android:textSize="16sp" />

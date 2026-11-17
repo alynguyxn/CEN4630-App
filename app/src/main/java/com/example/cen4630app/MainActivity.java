@@ -1,17 +1,29 @@
 package com.example.cen4630app;
 
+import android.content.Intent;
 import android.os.Bundle;
-//import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Button;
+import android.widget.SeekBar;
+import androidx.appcompat.app.AppCompatActivity;
 
-//public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
-    //@Override
-    //protected void onCreate(Bundle savedInstanceState) {
-        //super.onCreate(savedInstanceState);
+    private SeekBar seekBar;
+    private Button readyButton;
 
-        // This links your Java file to your activity_main.xml layout file
-        //setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        // TODO: Initialize your views and set up click listeners here!
-    //}
-//}
+        seekBar = findViewById(R.id.seekBar);
+        readyButton = findViewById(R.id.readyButton);
+
+        readyButton.setOnClickListener(v -> {
+            int energyScore = seekBar.getProgress();
+            Intent intent = new Intent(MainActivity.this, RecipeDisplay.class);
+            intent.putExtra("ENERGY_SCORE", energyScore);
+            startActivity(intent);
+        });
+    }
+}
